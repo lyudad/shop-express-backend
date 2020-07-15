@@ -1,2 +1,2 @@
-npm i
-npm run babel-node index.js
+- `npm i`
+- `npm run babel-node index.js`
