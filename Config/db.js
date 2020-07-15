@@ -1,6 +1,6 @@
 export default {
     host: 'localhost',
-    user: 'root',
-    password: 'dz1988555',
+    user: 'YOUR_USERNAME',
+    password: 'YOUR_PASS',
     database: 'shop'
 }
