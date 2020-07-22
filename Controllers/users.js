@@ -1,18 +1,48 @@
 import Router from 'express'
 import UserManager from '../DB/user.manager'
+import orm from '../ORM/models'
+
+const {
+    User,
+    Product,
+    Favorite
+} = orm
 
 const userRouter = Router()
 
-userRouter.post('/test', (req, res) => {
-
-    // console.log('usename>>>>', req)
-    // const { usename } = req.body
-    // console.log('usename>>>>', usename)
-    res.send('hello word test')
+userRouter.post('/test', async (req, res) => {
+    const users = await User.findAll()
+    res.send(users)
 })
 
 userRouter.get('/', async(req, res) => {
     const users = await UserManager.getAllUsers()
+    res.send(users)
+})
+
+userRouter.get('/:userId', async(req, res) => {
+    const {userId} = req.params
+    const users = await User.findAll({
+        where: {
+            id: userId
+        },
+        include: [{
+            model: Favorite,
+            attributes: ['id'],
+            include: [{
+                model: Product
+            }]
+        }]
+    })
+
+    // const users = await Favorite.findAll({
+    //     where: {
+    //         user_id: 1
+    //     },
+    //     include: [{
+    //         model: Product
+    //     }]
+    // })
     res.send(users)
 })
 
