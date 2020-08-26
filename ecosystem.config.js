@@ -22,7 +22,7 @@ module.exports = {
             ref: 'origin/autodeploy',
             repo: 'git@github.com:lyudad/shop-express-backend.git',
             path: '/var/www/shopServer',
-            'post-deploy': 'npm i && pm2 reload ecosystem.config.js --only stage'
+            'post-deploy': 'npm i && pm2 reload ecosystem.config.js'
         }
     }
 }
