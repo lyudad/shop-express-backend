@@ -19,7 +19,7 @@ module.export = {
             key: '/Users/macmini/Documents/Tesyserver/demo.pem',
             user: 'ubuntu',
             host: 'ec2-18-197-172-96.eu-central-1.compute.amazonaws.com',
-            ref: 'origin/master',
+            ref: 'origin/autodeploy',
             repo: 'git@github.com:lyudad/shop-express-backend.git',
             path: '/var/www/shopServer',
             'post-deploy': 'npm i && pm2 reload ecosystem.config.js --only stage'
