@@ -16,7 +16,7 @@ module.exports = {
     ],
     deploy: {
         staging: {
-            key: '/Users/macmini/Documents/Tesyserver/demo.pem',
+            key: '/Users/macmini/Documents/Testserver/demo.pem',
             user: 'ubuntu',
             host: 'ec2-18-197-172-96.eu-central-1.compute.amazonaws.com',
             ref: 'origin/autodeploy',
